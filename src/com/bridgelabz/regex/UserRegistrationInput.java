@@ -24,4 +24,10 @@ public class UserRegistrationInput {
         matcher=pattern.matcher(lastName);
         return matcher.matches();
     }
+    public boolean isEmailValid(String email) {
+        String regex = "[a-z0-9.]+@[a-z]+.[a-z]{2,3}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 }
