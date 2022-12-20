@@ -6,27 +6,27 @@ public class UserRegistrationInput {
     private Matcher matcher;
 
     /**
-     *pattern for first name
+     * pattern for first name
      */
-    public boolean isFirstNameValid(String firstName){
-        String regex="[A-Z][a-z]{2,}";
-        pattern= Pattern.compile(regex);
-        matcher=pattern.matcher(firstName);
+    public boolean isFirstNameValid(String firstName) {
+        String regex = "[A-Z][a-z]{2,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(firstName);
         return matcher.matches();
     }
 
     /**
      * pattern for last name
      */
-    public boolean isLastNameValid(String lastName){
-        String regex="[A-Z][a-z]{2,}";
-        pattern= Pattern.compile(regex);
-        matcher=pattern.matcher(lastName);
+    public boolean isLastNameValid(String lastName) {
+        String regex = "[A-Z][a-z]{2,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
 
     /**
-     *pattern for email Id
+     * pattern for email Id
      */
     public boolean isEmailValid(String email) {
         String regex = "[a-z0-9.]+@[a-z]+.[a-z]{2,3}";
@@ -34,13 +34,26 @@ public class UserRegistrationInput {
         matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
     /**
-     *pattern for mobile number
+     * pattern for mobile number
      */
     public boolean isMobileNumberValid(String mobilenumber) {
         String regex = "(91)?[7-9][0-9]{9}";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(mobilenumber);
+        return matcher.matches();
+    }
+
+    /**
+     *pattern for pre-defined password
+     * Rule 1
+     * minimum 8 characters
+     */
+    public boolean isPasswordValid(String password) {
+        String regex = "[a-zA-Z]{8,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(password);
         return matcher.matches();
     }
 }
