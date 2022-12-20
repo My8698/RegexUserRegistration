@@ -24,10 +24,23 @@ public class UserRegistrationInput {
         matcher=pattern.matcher(lastName);
         return matcher.matches();
     }
+
+    /**
+     *pattern for email Id
+     */
     public boolean isEmailValid(String email) {
         String regex = "[a-z0-9.]+@[a-z]+.[a-z]{2,3}";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    /**
+     *pattern for mobile number
+     */
+    public boolean isMobileNumberValid(String mobilenumber) {
+        String regex = "(91)?[7-9][0-9]{9}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(mobilenumber);
         return matcher.matches();
     }
 }
