@@ -47,11 +47,11 @@ public class UserRegistrationInput {
 
     /**
      *pattern for pre-defined password
-     * Rule 3
-     * atleast one numeric number
+     * Rule 4
+     * has exactly one special character
      */
     public boolean isPasswordValid(String password){
-        String regex = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{1,}";
+        String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=[^@#$%^&*+=]*[@#$%^&*+=][^@#$%^&*+=]*$).{8,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(password);
         return matcher.matches();
