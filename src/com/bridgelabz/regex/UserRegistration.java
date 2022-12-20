@@ -15,5 +15,12 @@ public class UserRegistration {
         else
             System.out.println("Invalid first name");
 
+        System.out.println("Enter last name:->");
+        String lastName=scanner.next();
+        if (userRegistration.isLastNameValid(lastName))
+            System.out.println("Valid last name");
+        else
+            System.out.println("Invalid last name");
+
     }
 }
